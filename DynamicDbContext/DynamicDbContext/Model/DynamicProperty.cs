@@ -13,6 +13,6 @@ namespace DynamicDbContext.Model
         public bool IsForignKey { get; set; }
         public string ForignKey { get; set; }
         public int MaxStringSize { get; set; }
-        public bool IsVirtual { get; internal set; }
+        public bool IsVirtual { get; set; }
     }
 }

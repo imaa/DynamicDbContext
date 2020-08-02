@@ -12,11 +12,9 @@ namespace DynamicDbContext.MemoryStore
 {
     public static class DynamicAssembly
     {
-        public static bool AllowAccessContext = false; 
-        public static DbContext _Context;
-
-        private static ObservableCollection<DynamicEntity> _Entities { get; set; }
-        public static ObservableCollection<DynamicEntity> Entities => _Entities; 
+        public static bool AllowAccessContext = false;
+        public static DbContext _Context; 
+        public static ObservableCollection<DynamicEntity> Entities { get; set; } 
         private static bool _IsInitialize { get; set; }
         public static bool HasChanged { get; internal set; }
     }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DynamicDbContext.Builders
 {
-    internal class EntityBuilder
+    public class EntityBuilder
     {
         public object CreateObject(Type entityType)
         {

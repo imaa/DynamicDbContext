@@ -19,9 +19,9 @@ namespace DynamicDbContext.Model
         public string Name { get; set; }
         public Type EntityType { get; set; }
         public ObservableCollection<DynamicProperty> Properties { get; set; }
-        public bool IsDetailedEntity { get; internal set; }
-        public string TableName { get; internal set; }
-        public Type BaseType { get; internal set; }
-        public long MasterId { get; internal set; }
+        public bool IsDetailedEntity { get;  set; }
+        public string TableName { get;  set; }
+        public Type BaseType { get;  set; }
+        public long MasterId { get;  set; }
     }
 }
