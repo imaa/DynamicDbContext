@@ -1,5 +1,8 @@
 # DynamicDbContext
 
+It will  allow  you create fully dynamic database from complied in memory assemply with auto  migration using Eniity framework 
+
+Tested with MS SQL , Oracle 
 
 #How to Use Sample
 
