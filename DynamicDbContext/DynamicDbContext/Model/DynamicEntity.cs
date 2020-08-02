@@ -22,6 +22,6 @@ namespace DynamicDbContext.Model
         public bool IsDetailedEntity { get; internal set; }
         public string TableName { get; internal set; }
         public Type BaseType { get; internal set; }
-        public long DocumentContainerId { get; internal set; }
+        public long MasterId { get; internal set; }
     }
 }
