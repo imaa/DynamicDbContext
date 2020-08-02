@@ -58,7 +58,7 @@ namespace DynamicDbContext.Factory
         }
         private static TypeBuilder GetDbConntextTypeBuilder(Type dbContextType)
         {
-            string typeSignature = "WatheqDynamicContext";
+            string typeSignature = "DynamicContext";
             AssemblyName an = new AssemblyName(typeSignature);
             AssemblyBuilder assemblyBuilder = AppDomain.CurrentDomain.DefineDynamicAssembly(an, AssemblyBuilderAccess.Run);
             ModuleBuilder moduleBuilder = assemblyBuilder.DefineDynamicModule("DynamicDbContextMainModule");

@@ -53,6 +53,13 @@
   <ItemGroup>
     <Compile Include="Builders\DynamicPropertyBuilder.cs" />
     <Compile Include="Builders\EntityBuilder.cs" />
+    <Compile Include="DynamicHelper\CustomDynamicExpression.cs" />
+    <Compile Include="DynamicHelper\DynamicCondition.cs" />
+    <Compile Include="DynamicHelper\DynamicFilter.cs" />
+    <Compile Include="DynamicHelper\Enums\Operator.cs" />
+    <Compile Include="DynamicHelper\Enums\SortDirection.cs" />
+    <Compile Include="DynamicHelper\Enums\WhereOperation.cs" />
+    <Compile Include="Extentions\LinqExtentions.cs" />
     <Compile Include="Factory\DbContextFactory.cs" />
     <Compile Include="MemoryStore\DynamicAssembly.cs" />
     <Compile Include="Model\DynamicEntity.cs" />
