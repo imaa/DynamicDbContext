@@ -1,5 +1,6 @@
 ﻿using DynamicDbContext.DynamicHelper;
 using DynamicDbContext.DynamicHelper.Enums;
+using DynamicDbContext.MemoryStore;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -170,6 +171,16 @@ namespace DynamicDbContext.Extentions
             object o = dbSetPropertyInfo.GetValue(context, null);
             object dbSetAsQueryable = genericAsQueryableMethod.Invoke(null, new object[] { o });
             return (dbSetAsQueryable as IQueryable).Where(column, value, operation);
+
+        }
+        public static IQueryable Where(this DbSet dbSet,
+    List<CustomDynamicExpression> dynamicExpressions)
+        {
+            MethodInfo mAsQueryable = typeof(Queryable).GetMethods().FirstOrDefault(m => m.Name == "AsQueryable" && m.IsGenericMethod);
+            MethodInfo genericAsQueryableMethod = mAsQueryable.MakeGenericMethod(dbSet.ElementType);
+            object o = DynamicAssembly._Context.GetType().GetProperties().SingleOrDefault(x => x.Name == dbSet.ElementType.Name).GetValue(DynamicAssembly._Context, null);
+            object dbSetAsQueryable = genericAsQueryableMethod.Invoke(null, new object[] { o });
+            return (dbSetAsQueryable as IQueryable).Where(dynamicExpressions);
 
         }
         public static IQueryable Where(this DbSet dbSet, DbContext context, PropertyInfo dbSetPropertyInfo,
