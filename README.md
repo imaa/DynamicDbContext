@@ -1,5 +1,8 @@
 # DynamicDbContext
 
+It will allow you to create a fully dynamic database from complied in-memory assembly with auto migration using Entity framework
+
+Tested with MS SQL, Oracle
 
 #How to Use Sample
 
@@ -93,3 +96,10 @@
             PropertyInfo propInfo = DynamicAssembly._Context.GetType().GetProperties().SingleOrDefault(x => x.Name == exmployeesEntityType.Name);
             var query = employees.Where(DynamicAssembly._Context, propInfo, dynamicFilter);
             var list = query.OrderBy("Id", SortDirection.Asc).Skip(0).Take(10).ToListAsync().GetAwaiter().GetResult();
+
+
+
+**Result**
+
+![alt text](/DynamicDbContext/Res/result.png)
+ 
