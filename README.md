@@ -6,7 +6,7 @@ Tested with MS SQL, Oracle
 
 #How to Use Sample
 
-        Database.SetInitializer<MyDbContext>(new MigrateDatabaseToLatestVersion<MyDbContext, Configuration>());
+         Database.SetInitializer<MyDbContext>(new MigrateDatabaseToLatestVersion<MyDbContext, Configuration>());
             EntityBuilder entityBuilder = new EntityBuilder();
             var Employees = new Model.DynamicEntity
             {
@@ -93,9 +93,10 @@ Tested with MS SQL, Oracle
                 }
             }
             );
-            PropertyInfo propInfo = DynamicAssembly._Context.GetType().GetProperties().SingleOrDefault(x => x.Name == exmployeesEntityType.Name);
-            var query = employees.Where(DynamicAssembly._Context, propInfo, dynamicFilter);
+            var query = employees.Where( dynamicFilter);
+ 
             var list = query.OrderBy("Id", SortDirection.Asc).Skip(0).Take(10).ToListAsync().GetAwaiter().GetResult();
+
 
 
 
